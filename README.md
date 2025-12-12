@@ -58,6 +58,6 @@ Better knowledge of handing arrays and objects
 
 ## Author
 
-- Website - comi
+- Website - comimg soon..
 - Frontend Mentor - [@Ohzzy90](https://www.frontendmentor.io/profile/ohzzy90)
 - Twitter - [@ohzzy_90](https://www.twitter.com/ohzzy_90)
