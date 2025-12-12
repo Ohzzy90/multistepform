@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>multistepform</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+      <link rel="stylesheet" href="/src/style.css">
+      <style>
+        .item-selected{
+  border: 1px solid var(--clr-purple-600) !important;
+  background-color: var(--clr-blue-100) !important;
+}
+.active{
+  background-color: #fff !important;
+  color: #000 !important;
+}
+.plan-container.selected {
+    border-color: var(--bs-purple) !important; /* Or your preferred purple hex */
+    background-color: hsla(243, 100%, 62%, 0.05);
+}
+
+input.is-invalid {
+    border-color: red !important;
+}
+
+
+      </style>
+</head>
+
+<body class="bg-blue-100">
+  <main class=" align-items-center justify-content-center m-auto">
+    <div>
+      <div class="container-fluid p-0 container-holder">
+        <div id="infoWrapper" class="d-flex flex-column flex-md-row p-md-4 m-md-3 info-wrapper gap-md-4 gap-lg-5"
+          style="max-width: 1000px;">
+          <div class="img-wrapper" style="position: relative;">
+            <div class="d-md-none w-100">
+              <img src="/public/assets/images/bg-sidebar-mobile.svg" alt="" class="w-100">
+            </div>
+            <div class="d-none d-md-block">
+              <img src="/public/assets/images/bg-sidebar-desktop.svg" alt="" class="w-100">
+            </div>
+          </div>
+          <div class="controls w-75 d-flex justify-content-center" style="position: absolute; top: 25%; left: 12%;">
+            <nav aria-label="Sign-up process steps">
+              <ul role="list" class="d-flex gap-3 gap-sm-4 p-0 flex-md-column">
+
+                <li class="d-flex align-items-center">
+          <div class="cursor-pointer nav-link active rounded-circle fs-300 px-3 py-2 me-md-3" style="border: 1px solid white; color: white;">1
+                  </div>
+                  <div class="d-none d-md-block text-light">
+                    <span class="d-block text-uppercase text-muted-light">STEP 1</span>
+                    <strong class="d-block text-uppercase">YOUR INFO</strong>
+                  </div>
+                </li>
+
+                <li class="d-flex align-items-center">
+                  <div class="cursor-pointer nav-link rounded-circle fs-300 px-3 py-2 me-md-3" style="border: 1px solid white; color: white;">2
+                  </div>
+                  <div class="d-none d-md-block text-light">
+                    <span class="d-block text-uppercase text-muted-light">STEP 2</span>
+                    <strong class="d-block text-uppercase">SELECT PLAN</strong>
+                  </div>
+                </li>
+
+                <li class="d-flex align-items-center">
+                  <div class="cursor-pointer nav-link rounded-circle fs-300 px-3 py-2 me-md-3" style="border: 1px solid white; color: white;">3
+                  </div>
+                  <div class="d-none d-md-block text-light">
+                    <span class="d-block text-uppercase text-muted-light">STEP 3</span>
+                    <strong class="d-block text-uppercase">ADD-ONS</strong>
+                  </div>
+                </li>
+
+                <li class="d-flex align-items-center">
+                  <div class="cursor-pointer nav-link rounded-circle fs-300 px-3 py-2 me-md-3" style="border: 1px solid white; color: white;">4
+                  </div>
+                  <div class="d-none d-md-block text-light">
+                    <span class="d-block text-uppercase text-muted-light">STEP 4</span>
+                    <strong class="d-block text-uppercase">SUMMARY</strong>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <section class="form-wrapper h-md-100 d-block " style="width: 90%;" id="infoSection">
+            <div class="pt-4 pb-5 px-4 shadow-lg pb-md-0 rounded-4 shadow-md-none rounded-md-2 content-wrapper"
+              style=" background: white !important;">
+              <h1 class="clr-blue-950 fw-bold fs-600 fs-lg-600">Personal info</h1>
+              <h4 class="opacity-50 mb-4 mt-3 fs-300" style="font-weight: 300; line-height: 1.5; width: 90%;">Please
+                provide
+                name, email and address, and phone number
+              </h4>
+              <form action="" class="my-md-4 mt-lg-5">
+                <label for="name" class="clr-blue-950 mb-1 fs-200">Name</label> <br>
+                <input type="text" class="W-100 rounded-2 py-2 px-3 fs-300 w-100 mb-4 active-label form-control form-control fw-medium" placeholder="John Doe"
+                  style="border: 1px solid rgba(0,0,0,0.4);">
+                <label for="email" class="clr-blue-950 mb-1 fs-200">Email Address</label> <br>
+                <input type="email" class="W-100 rounded-2 py-2 px-3 fs-300 w-100 mb-4 active-label form-control fw-medium" placeholder="example@lorem.com"
+                  style="border: 1px solid rgba(0,0,0,0.4);">
+                <label for="phoneNumber" class="clr-blue-950 mb-1 fs-200">Phone Number</label> <br>
+                <input type="tel" class="W-100 rounded-2 py-2 px-3 fs-300 w-100 active-label form-control fw-medium" placeholder="+1 234 567 890"
+                  style="border: 1px solid rgba(0,0,0,0.4);" autocomplete="tel">
+
+              </form>
+              <div class=" px-0 mt-5 d-flex justify-content-end w-100 d-none d-md-flex nxt-control"
+                style="position: absolute; bottom: 2%; left: -5%;">
+                <button class="btn bg-blue-950 text-light fs-200 fs-lg-200 px-4 py-2 text-end align-items-end next-btn">Next
+                  Step</button>
+              </div>
+            </div>
+          </section>
+          <section section class="form-wrapper h-md-100 d-none " style="width: 90%;" id="planSection">
+            <div
+              class="pt-4 pb-5 px-4 shadow-lg pb-md-0 ps-md-3 ps-lg-4 rounded-4 shadow-md-none rounded-md-2 content-wrapper"
+              style=" background: white !important;">
+              <h1 class="clr-blue-950 fw-bold fs-600 fs-lg-600">Select your plan</h1>
+              <h4 class="opacity-50 mb-4 mt-3 fs-300" style="font-weight: 300; line-height: 1.5; width: 90%;">You have
+                the option
+                of monthly or yearly billing
+              </h4>
+              <div class="my-md-4 d-grid gap-4 grid-container mt-lg-5">
+                <div
+                  class="item-hover cursor-pointer p-3 d-flex flex-md-column align-items-md-start justify-content-md-between align-items-center plan-container rounded-3"
+                  style="border: 1px solid hsla(0, 0%, 26%, 0.2);">
+                  <div class=" me-4 me-md-3"><img src="/public/assets/images/icon-arcade.svg" alt=""
+                      style="width: 50px;">
+                  </div>
+                  <div class="clr-blue-950">
+                    <h4 class=" m-0 fs-400">Arcade</h4>
+                    <h6 class="opacity-50 m-0 fw-regular my-1 plan-pricing">$9/mo</h6>
+                    <p class="d-none fs-100 m-0 yearly-bonus">2 months free</p>
+                  </div>
+                </div>
+                <div
+                  class="item-hover cursor-pointer p-3 d-flex flex-md-column align-items-md-start justify-content-md-between align-items-center plan-container rounded-3"
+                  style="border: 1px solid hsla(0, 0%, 26%, 0.2);">
+                  <div class=" me-4 me-md-3"><img src="/public/assets/images/icon-advanced.svg" alt=""
+                      style="width: 50px;">
+                  </div>
+                  <div class="clr-blue-950">
+                    <h4 class="m-0 fs-400">Advance</h4>
+                    <h6 class="opacity-50 m-0 fw-regular my-1 plan-pricing">$12/mo</h6>
+                    <p class="d-none fs-100 m-0 yearly-bonus">2 months free</p>
+                  </div>
+                </div>
+                <div
+                  class="item-hover cursor-pointer p-3 d-flex flex-md-column align-items-md-start justify-content-md-between align-items-center plan-container rounded-3"
+                  style="border: 1px solid hsla(0, 0%, 26%, 0.2);">
+                  <div class=" me-4 me-md-3"><img src="/public/assets/images/icon-pro.svg" alt="" style="width: 50px;">
+                  </div>
+                  <div class="clr-blue-950">
+                    <h4 class="m-0 fs-400">Pro</h4>
+                    <h6 class="opacity-50 m-0 fw-regular my-1 plan-pricing">$15/mo</h6>
+                    <p class="d-none fs-100 m-0 yearly-bonus">2 months free</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-blue-100 align-items-center justify-content-center d-flex gap-3 py-3 px-2 mt-4 mt-lg-5 rounded-3">
+                <span class="fw-medium fs-300">Monthly</span>
+                <div class="custom-toggle-container">
+                  <input type="checkbox" id="customToggle" class="custom-checkbox">
+                  <label for="customToggle" class="custom-slider"></label>
+                </div>
+                <span class="fw-medium fs-300 opacity-50">Yearly</span>
+              </div>
+              <div class=" px-0 d-flex justify-content-between w-100 d-none d-md-flex nxt-control"
+                style="position: absolute; bottom: 2%; left: -5%;">
+                <button class="btn bg-none text-dark opacity-50 fs-200 fs-lg-200 fw-medium ml-lg go-back-btn"
+                  style="margin-left: 2rem;">Go back</button>
+                <button class="btn bg-blue-950 text-light fs-200 fs-lg-200 px-4 py-2 text-end align-items-end next-btn">Next
+                  Step</button>
+              </div>
+            </div>
+          </section>
+          <section section class="form-wrapper h-md-100 d-none " style="width: 90%;" id="addOnsSection">
+            <div
+              class="pt-4 pb-5 px-4 shadow-lg pb-md-0 ps-md-3 ps-lg-4 rounded-4 shadow-md-none rounded-md-2 content-wrapper"
+              style=" background: white !important;">
+              <h1 class="clr-blue-950 fw-bold fs-600 fs-lg-600">Pick add-ons</h1>
+              <h4 class="opacity-50 mb-4 mt-3 fs-300" style="font-weight: 300; line-height: 1.5; width: 90%;">Add-ons
+                help enhance your gaming experience
+              </h4>
+              <div class="mt-3 my-md-4 d-grid gap-3 gap-md-4 mt-lg-5">
+                <div class="cursor-pointer item-hover py-2 py-sm-3 px-3 px-sm-4 gap-4 d-flex align-items-center rounded-3"
+                  style="border: 1px solid hsla(0, 0%, 26%, 0.2);">
+                  <div>
+                    <label for="checkbox"></label>
+                    <input type="checkbox" class="clr-purple-600 checkbox">
+                  </div>
+                  <div class="clr-blue-950" style="flex: 1;">
+                    <h4 class=" m-0 fs-200 fw-bold fs-lg-200">Online service</h4>
+                    <h6 class="opacity-50 m-0 fw-regular my-1 fs-100 fs-lg-100">Access to multiplayer games</h6>
+                  </div>
+                  <div>
+                    <span class="clr-purple-600">+$1/mo</span>
+                  </div>
+                </div>
+                <div class="cursor-pointer item-hover py-2 py-sm-3 px-3 px-sm-4 gap-4 d-flex align-items-center rounded-3"
+                  style="border: 1px solid hsla(0, 0%, 26%, 0.2);">
+                  <div>
+                    <label for="checkbox"></label>
+                    <input type="checkbox" class="clr-purple-600 checkbox">
+                  </div>
+                  <div class="clr-blue-950" style="flex: 1;">
+                    <h4 class=" m-0 fs-200 fw-bold fs-lg-200">Larger Storage</h4>
+                    <h6 class="opacity-50 m-0 fw-regular my-1 fs-100 fs-lg-100">Extra 1TB of cloud save</h6>
+                  </div>
+                  <div>
+                    <span class="clr-purple-600">+$2/mo</span>
+                  </div>
+                </div>
+                <div class="cursor-pointer item-hover py-2 py-sm-3 px-3 px-sm-4 gap-4 d-flex align-items-center rounded-3"
+                  style="border: 1px solid hsla(0, 0%, 26%, 0.2);">
+                  <div>
+                    <label for="checkbox"></label>
+                    <input type="checkbox" class="clr-purple-600 checkbox">
+                  </div>
+                  <div class="clr-blue-950" style="flex: 1;">
+                    <h4 class=" m-0 fs-200 fw-bold fs-lg-200">Customizable profiles</h4>
+                    <h6 class="opacity-50 m-0 fw-regular my-1 fs-100 fs-lg-100">Custom theme on your profile</h6>
+                  </div>
+                  <div>
+                    <span class="clr-purple-600">+$2/mo</span>
+                  </div>
+                </div>
+
+              </div>
+              <div class=" px-0 d-flex justify-content-between w-100 d-none d-md-flex nxt-control"
+                style="position: absolute; bottom: 2%; left: -5%;">
+                <button class="btn bg-none text-dark opacity-50 fs-200 fs-lg-200 fw-medium ml-lg go-back-btn"
+                  style="margin-left: 2rem;">Go back</button>
+                <button class="btn bg-blue-950 text-light fs-200 fs-lg-200 px-4 py-2 text-end align-items-end next-btn">Next
+                  Step</button>
+              </div>
+            </div>
+          </section>
+          <section section class="form-wrapper h-md-100 d-none " style="width: 90%;" id="summarySection">
+            <div
+              class="pt-4 pb-5 px-4 shadow-lg pb-md-0 ps-md-3 ps-lg-4 rounded-4 shadow-md-none rounded-md-2 content-wrapper"
+              style=" background: white !important;">
+              <h1 class="clr-blue-950 fw-bold fs-600 fs-lg-600">Finishing up</h1>
+              <h4 class="opacity-50 mb-4 mt-3 fs-300" style="font-weight: 300; line-height: 1.5; width: 90%;">
+                Double-check everything looks OK before confirming.
+              </h4>
+              <div class="mt-3 my-md-4 mt-lg-5 bg-blue-100 rounded-3 p-3">
+                <div class="plans-summary d-flex justify-content-between align-items-center">
+                  <div>
+                    <h4 class="m-0 fs-200 fw-medium fs-lg-200">Arcade (<span id="planType">Monthly</span>)</h4>
+                    <button class="btn p-0 text-decoration-underline bg-none text-dark opacity-50" id="changeItems">Change</button>
+                  </div>
+                  <div>
+                    <span class="clr-blue-950 fw-bold fs-200 fs-lg-200">$9/mo</span>
+                  </div>
+                </div>
+                <!-- <hr class="mt-2 mb-3" style="width: 95% ;margin: auto; opacity: 0.1;"> -->
+                <div class="add-ons-summary d-grid gap-2">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <h6 class="opacity-50 m-0 fw-regular my-1 fs-200 fs-lg-100">Online service</h6>
+                    <span class="clr-blue-950 fs-100 fs-lg-100">+$1/mo</span>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <h6 class="opacity-50 m-0 fw-regular my-1 fs-200 fs-lg-200">Larger storage</h6>
+                    <span class="clr-blue-950 fs-100 fs-lg-100">+$2/mo</span>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center justify-content-between p-3">
+                <h6 class="opacity-50 m-0 fw-regular my-1 fs-200 fs-lg-200">Total (per <span
+                    class="planTypeConfirmation">month</span>)</h6>
+                <span class="clr-purple-600 fw-bold fs-200 fs-lg-200" id="totalAmount">$2/mo</span>
+              </div>
+
+              <div class=" px-0 d-flex justify-content-between w-100 d-none d-md-flex nxt-control"
+                style="position: absolute; bottom: 2%; left: -5%;">
+                <button class="btn bg-none text-dark opacity-50 fs-200 fs-lg-200 fw-medium ml-lg go-back-btn"
+                  style="margin-left: 2rem;">Go back</button>
+                <button
+                  class="btn bg-purple-600 text-light fs-200 fs-lg-200 px-4 py-2 text-end align-items-end confirm-btn">Confirm</button>
+              </div>
+            </div>
+          </section>
+          <section section class="form-wrapper m-auto h-md-100 d-none " style="width: 90%;" id="thankYou">
+            <div
+              class="pt-4 pt-md-0 pb-5 px-4 shadow-lg pb-md-0 ps-md-3 ps-lg-4 rounded-4 shadow-md-none rounded-md-2 content-wrapper align-items-center justify-content-center text-center m-auto"
+              style=" background: white !important; ">
+              <div class="align-items-center justify-content-center d-flex mb-4" style="width: auto;">
+                <img src="/public/assets/images/icon-thank-you.svg" alt="" style="width: 70px;">
+              </div>
+
+              <h2 class="fw-bold clr-blue-950">Thank you!</h2>
+              <p class="text-dark opacity-50 m-auto text-w mt-2" style="width: 75%;">Thanks for confirming your subcription!
+                We hope you have fun using our platform. if you ever need support please feel free to contact us at
+                support@loremgaming.com</p>
+            </div>
+          </section>
+
+        </div>
+        <div class="mobile-btn-controls">
+          <div class="d-block">
+            <div class=" p-3 d-flex justify-content-end w-100 d-md-none"
+              style="background-color: white !important; position: absolute; bottom: 0%;">
+              <button class="btn bg-blue-950 text-light fs-200 px-3 py-2 text-end align-items-end next-btn">Next Step</button>
+            </div>
+          </div>
+          <div class="d-none">
+            <div class=" p-3 d-flex justify-content-between w-100 d-md-none"
+              style="background-color: white !important; position: absolute; bottom: 0%;">
+              <button class="btn bg-none text-dark opacity-50 fs-200 fs-lg-200 fw-medium ml-lg go-back-btn"
+                  >Go back</button>
+              <button class="btn bg-blue-950 text-light fs-200 px-3 py-2 text-end align-items-end next-btn">Next Step</button>
+            </div>
+          </div>
+           <div class="d-none">
+            <div class=" p-3 d-flex justify-content-between w-100 d-md-none"
+              style="background-color: white !important; position: absolute; bottom: 0%;">
+              <button class="btn bg-none text-dark opacity-50 fs-200 fs-lg-200 fw-medium ml-lg go-back-btn"
+                  >Go back</button>
+              <button class="btn bg-purple-600 text-light fs-200 px-3 py-2 text-end align-items-end confirm-btn">Confirm</button>
+            </div>
+           </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
