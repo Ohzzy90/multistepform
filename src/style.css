@@ -217,7 +217,7 @@ picture {
   display: block;
 }
 ::placeholder{
-  opacity: 0.8;
+  opacity: 0.3;
   font-weight: 400 !important;
 }
 input,
