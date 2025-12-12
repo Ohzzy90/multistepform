@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./public/assets/images/multistepform.png)
+![](./public/assets/images/screenshot.png)
 
 ### Links
 
