@@ -231,7 +231,7 @@ select {
 }
 .form-wrapper{
   position: absolute;
-  top: 70%;
+  top: 60%;
   left:5%;
 
 }
@@ -323,13 +323,16 @@ input.active-label:active {
   left:5%;
 
 }
+
 }
+
 @media (min-width:768px) {
 
 .form-wrapper{
   position: relative;
     top: auto;
     left: auto;
+    bottom: auto;
 
 }
 .container-holder {
